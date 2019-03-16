@@ -1,0 +1,24 @@
+<div id = "room">
+    <div id = "output"> </div>
+
+    <input id = "message" placeholder = "Message"/>
+    <button id = "sendMessage" value = "<%= email %>"> Send </button>
+
+    <script> 
+        $('#room').ready(function () {
+            console.log('chat is ready');
+            $('#sendMessage').click(function (e) {
+                socket.emit('message', {
+                    email: $('#sendMessage').val(),
+                    message: $('#message').val()
+                });
+            });
+        });
+
+        socket.on('clientMessage', function (data) {
+            let li = `<li> ${data.email} </li> <li> ${data.message} </li>`;
+            let outputHtml = $('#output').html();
+            $('#output').html(outputHtml + li);
+        });
+    </script>
+</div>

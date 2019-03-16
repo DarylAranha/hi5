@@ -1,0 +1,18 @@
+{
+  "name": "hi5",
+  "version": "1.0.0",
+  "description": "A mvc based chat app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daryl Aranha",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "favicon": "0.0.2",
+    "socket.io": "^2.2.0"
+  }
+}

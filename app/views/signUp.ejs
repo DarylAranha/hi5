@@ -1,0 +1,41 @@
+<div id="signUp">
+    <input id="userName" type="text" placeholder="User Name" name="userName"/>
+    <input id="email" type="text" placeholder="Email Address" name="email"/>            
+    <button id="addUserBtn" type="button"> Add User </button>
+
+    <script> 
+        $('#signUp').ready(function () {
+            console.log('div ready');
+        
+            $("#addUserBtn").click(function(e) {
+                e.preventDefault();
+                let email = $('#email').val();
+                let userName = $('#userName').val();
+                let clientId = socket.io.engine.id;
+
+                clientInfo.email = email;
+                clientInfo.userName = userName;
+                clientInfo.clientId = clientId;
+
+                console.log('Sending information to server');
+
+                $.post("/join", {
+                    email: email,
+                    userName: userName,
+                    clientId: clientId,
+                }, function(data, status){
+                    if(status == "success") {
+                        $.get('/chatRoom', {
+                            email: clientInfo.email
+                        }, function (data, status) {
+                            $('#displayContent').html(data);
+                        });
+                    } else {
+                        alert('Sorry!!! chat app is not responding at a moment.');
+                    }
+                });
+
+            });
+        });
+    </script>
+</div>

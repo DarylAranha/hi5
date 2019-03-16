@@ -1,0 +1,45 @@
+<div id="room">
+    <ul>
+        <% users.forEach(function (user) { %>
+            <li id="<%= user.id %>"> 
+                User Name:<%= user.userName %> <br>
+                Email: <%= user.email %> <br>
+                <button id="startConvo" value = "<%= user.email %>"> Start Conversation </button>
+            </li>
+        <% }); %>
+    </ul>
+
+    <script> 
+        $('#room').ready(function () {
+            console.log('Div ready');
+
+            let timer = setTimeout(function(){
+                console.log('reloading');
+                $.get('/chatRoom', {
+                    email: clientInfo.email
+                }, function (data, status) {
+                    $('#displayContent').html(data);
+                });
+            }, 5000);
+        
+            $("#startConvo").click(function(e) {
+                e.preventDefault();
+                clearTimeout(timer);
+                let userEamil = $('#startConvo').val();
+                console.log('Starting convo with ' + userEamil);
+
+                $.post("/selectUser", {
+                    chatEmail: userEamil
+                }, function(data, status){
+                    if(status == "success") {
+                        $.get('/convo', function (data, status) {
+                            $('#displayContent').html(data);
+                        });
+                    } else {
+                        alert('Sorry!!! chat app is not responding at a moment.');
+                    }
+                });
+            });
+        });
+    </script>
+</div>
