@@ -22,7 +22,7 @@ Click on the link [NodeJs](https://nodejs.org/en/) and download the latest versi
 
 ### Screenshot
 
-![](Screenshot/sign%20up.png)
+![sign up](https://github.com/DarylAranha/hi5/blob/master/Screenshot/sign%20up.PNG)
 ## Authors
 
 * **Daryl Aranha**
