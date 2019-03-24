@@ -1,35 +1,110 @@
-html,body {
-    font-family: 'Open Sans', serif;
-    font-size: 14px;
-    font-weight: 300;
-  }
-  .hero.is-success {
-    background: #F2F6FA;
-  }
-  .hero .nav, .hero.is-success .nav {
-    -webkit-box-shadow: none;
-    box-shadow: none;
-  }
-  .box {
-    margin-top: 5rem;
-  }
-  .avatar {
-    margin-top: -70px;
-    padding-bottom: 20px;
-  }
-  .avatar img {
-    padding: 5px;
-    background: #fff;
-    border-radius: 50%;
-    -webkit-box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-    box-shadow: 0 2px 3px rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.1);
-  }
-  input {
-    font-weight: 300;
-  }
-  p {
-    font-weight: 700;
-  }
-  p.subtitle {
-    padding-top: 1rem;
-  }
+:root {
+  --intro-container-width: 47%;
+  --img-width: 180px;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: open-sans, sans-serif;
+}
+
+.displayContent {
+  height: 100%;
+  display: grid;
+  grid-template-columns: var(--intro-container-width) auto;
+}
+
+.intro {
+    background: #29C682;
+    z-index: -2;
+}
+
+.intro h1 {
+  color: #29C682;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-left: 1em;
+}
+
+.introText {
+  display: block;
+  margin-top: 30%;
+}
+
+.introText p {
+  color: #fff;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.signUp {
+  background: #fff;
+  box-shadow: 0 0 20px 0;
+}
+
+.wrapper {
+  margin-top: 25%;
+  text-align:center;
+}
+
+.wrapper h1 {
+  color: #29C682;
+  font-weight: bold;
+  display: block;
+}
+
+input[type=text] {
+  width: 35%;
+  background-color: #E9EAEA;
+  color: #909995;
+  border-radius: 6px;
+  padding: 7px 16px;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: bold;
+  display: block;
+  border-style:solid;
+  border: none;
+}
+
+input:focus {
+  color: #000;
+}
+
+button {
+  background-color: #29C682;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 32%;
+  border-radius: 16px;
+}
+
+img {
+  position: absolute;
+  width: var(--img-width);
+  z-index: -1;
+}
+
+.top {
+  top: 0;
+  left: 0;
+}
+
+.bottom {
+    left: calc(var(--intro-container-width) - var(--img-width));
+    bottom: 0;
+}
