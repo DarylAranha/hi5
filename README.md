@@ -18,8 +18,11 @@ Click on the link [NodeJs](https://nodejs.org/en/) and download the latest versi
 
 ### Future Enancements
 
-* Adding CSS
+* Adding CSS to all the pages
 
+### Screenshot
+
+![](Screenshot/sign%20up.png)
 ## Authors
 
 * **Daryl Aranha**
