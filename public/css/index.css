@@ -9,102 +9,169 @@ html, body {
   font-family: open-sans, sans-serif;
 }
 
-.displayContent {
-  height: 100%;
-  display: grid;
-  grid-template-columns: var(--intro-container-width) auto;
+@media only screen and (max-width: 600px) {
+  .displayContent {
+    height: 100%;
+    display: block;
+  }
+  
+  .intro {
+    display: none;
+  }
+
+  .signUp {
+    background: #fff;
+    display: block;
+    width: 100%;
+    margin-top: 40%;
+  }
+
+  h1 {
+    color: #29C682;
+    font-weight: bold;
+    display: block;
+    text-align: center;
+  }
+  
+  input[type=text] {
+    width: 30%;
+    background-color: #E9EAEA;
+    color: #909995;
+    border-radius: 6px;
+    padding: 7px 16px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    display: block;
+    border-style:solid;
+    border: none;
+  }
+  
+  input:focus {
+    color: #000;
+  }
+  
+  button {
+    background-color: #29C682;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 28%;
+    border-radius: 16px;
+  }
+  
+  img {
+    display: none;
+  }
 }
 
-.intro {
-    background: #29C682;
-    z-index: -2;
-}
+@media only screen and (min-width: 601px) {
 
-.intro h1 {
-  color: #29C682;
-  font-weight: bold;
-  margin-top: 1em;
-  margin-left: 1em;
-}
+  .displayContent {
+    height: 100%;
+    display: grid;
+    grid-template-columns: var(--intro-container-width) auto;
+  }
 
-.introText {
-  display: block;
-  margin-top: 30%;
-}
+  .intro {
+      background: #29C682;
+      z-index: -2;
+  }
 
-.introText p {
-  color: #fff;
-  font-weight: bold;
-  font-size: 25px;
-  text-align: center;
-  padding: 10px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  .intro h1 {
+    color: #29C682;
+    font-weight: bold;
+    margin-top: 1em;
+    margin-left: 1em;
+  }
 
-.signUp {
-  background: #fff;
-  box-shadow: 0 0 20px 0;
-}
+  .introText {
+    display: block;
+    margin-top: 30%;
+  }
 
-.wrapper {
-  margin-top: 25%;
-  text-align:center;
-}
+  .introText p {
+    color: #fff;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-.wrapper h1 {
-  color: #29C682;
-  font-weight: bold;
-  display: block;
-}
+  .signUp {
+    background: #fff;
+    box-shadow: 0 0 20px 0;
+  }
 
-input[type=text] {
-  width: 35%;
-  background-color: #E9EAEA;
-  color: #909995;
-  border-radius: 6px;
-  padding: 7px 16px;
-  margin-top: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  font-weight: bold;
-  display: block;
-  border-style:solid;
-  border: none;
-}
+  .wrapper {
+    margin-top: 25%;
+    text-align:center;
+  }
 
-input:focus {
-  color: #000;
-}
+  .wrapper h1 {
+    color: #29C682;
+    font-weight: bold;
+    display: block;
+  }
 
-button {
-  background-color: #29C682;
-  border: none;
-  color: white;
-  padding: 12px 16px;
-  text-align: center;
-  text-decoration: none;
-  font-weight: bold;
-  display: block;
-  margin-top: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 32%;
-  border-radius: 16px;
-}
+  input[type=text] {
+    width: 35%;
+    background-color: #E9EAEA;
+    color: #909995;
+    border-radius: 6px;
+    padding: 7px 16px;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: bold;
+    display: block;
+    border-style:solid;
+    border: none;
+  }
 
-img {
-  position: absolute;
-  width: var(--img-width);
-  z-index: -1;
-}
+  input:focus {
+    color: #000;
+  }
 
-.top {
-  top: 0;
-  left: 0;
-}
+  button {
+    background-color: #29C682;
+    border: none;
+    color: white;
+    padding: 12px 16px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 32%;
+    border-radius: 16px;
+  }
 
-.bottom {
-    left: calc(var(--intro-container-width) - var(--img-width));
-    bottom: 0;
+  img {
+    position: absolute;
+    width: var(--img-width);
+    z-index: -1;
+  }
+
+  .top {
+    top: 0;
+    left: 0;
+  }
+
+  .bottom {
+      left: calc(var(--intro-container-width) - var(--img-width));
+      bottom: 0;
+  }
 }
